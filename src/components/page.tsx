@@ -95,12 +95,28 @@ export function Section({
   links?: readonly Link[];
   children: ReactNode;
 }) {
+  const companyHref =
+    links.find(([title]) => title.toLowerCase() === "website")?.[1] ??
+    links[0]?.[1];
+
   return (
     <div className="flex flex-col gap-4 pb-8 border-b border-foreground/10 border-dotted">
       <div className="flex flex-col md:flex-row md:items-start md:flex-wrap justify-between md:gap-4 gap-2 uppercase mb-4 md:mb-0">
         <div className="flex flex-col gap-1">
           <h1 className="font-semibold tracking-tight">
-            {`> ${company}`}
+            {"> "}
+            {companyHref ? (
+              <a
+                href={companyHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {company}
+              </a>
+            ) : (
+              company
+            )}
             {role && (
               <span className="whitespace-nowrap">{` - ${role}`}</span>
             )}
