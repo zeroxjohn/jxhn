@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "jxhn — john / thai",
-    short_name: "jxhn",
+    name: "thai / john",
+    short_name: "thai / john",
     description:
-      "john / thai — senior devrel engineer @layerzero. builder, supporter of founders @sozuhaus.",
+      "industry standard for cross-chain asset movement. issuers use layerzero to deploy, expand, and connect assets to the world's most utilized blockchains.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
