@@ -23,20 +23,30 @@ export function Header({
     <header className="space-y-10">
       <div className="flex flex-col md:flex-row justify-between md:items-center md:gap-0 gap-3 border-b border-foreground/10 border-dotted pb-5">
         <h1 className="text-xl border-l-[6px] border-accent pl-5 tracking-tight">{name}</h1>
-        <div className="flex items-center gap-4">
-          {"["}
-          {socials.map(([title, href], i) => (
-            <span key={href}>
-              <a
-                className="text-muted hover:underline"
-                href={href}
-              >
-                {title}
-              </a>
-              {i < socials.length - 1 && ", "}
-            </span>
-          ))}
-          {"]"}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            {"["}
+            {socials.map(([title, href], i) => (
+              <span key={href}>
+                <a
+                  className="text-muted hover:underline"
+                  href={href}
+                >
+                  {title}
+                </a>
+                {i < socials.length - 1 && ", "}
+              </span>
+            ))}
+            {"]"}
+          </div>
+          <a
+            href="/resume.pdf"
+            download="jxhn-resume.pdf"
+            aria-label="download resume as pdf"
+            className="border border-foreground/20 px-2 py-0.5 text-xs tracking-tight text-muted hover:border-accent hover:text-accent"
+          >
+            pdf
+          </a>
         </div>
       </div>
     </header>
@@ -69,15 +79,6 @@ export function Main({ children }: { children: ReactNode }) {
     <main className="w-full overflow-hidden text-sm space-y-16">
       {children}
     </main>
-  );
-}
-
-export function About({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex flex-col gap-4 py-8 border-b border-foreground/10 border-dotted">
-      <h1 className="font-semibold uppercase tracking-tight">{"> about"}</h1>
-      {children}
-    </div>
   );
 }
 

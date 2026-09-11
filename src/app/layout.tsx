@@ -4,16 +4,15 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const SITE_URL = "https://jxhn.xyz";
-const NAME = "jxhn / john / thai";
-const TAGLINE = "probably nothing...";
+const NAME = "thai / john";
 const DESCRIPTION =
-  "john / thai — senior devrel engineer @layerzero, prev @mantle. builder, supporter of founders @sozuhaus. i build, learn, and ship in public.";
+  "industry standard for cross-chain asset movement. issuers use layerzero to deploy, expand, and connect assets to the world's most utilized blockchains.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "jxhn — john / thai",
-    template: "%s · jxhn",
+    default: NAME,
+    template: `%s · ${NAME}`,
   },
   description: DESCRIPTION,
   applicationName: "jxhn",
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: NAME,
-    description: TAGLINE,
+    description: DESCRIPTION,
     url: SITE_URL,
     siteName: "jxhn",
     images: [
@@ -69,7 +68,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "jxhn — john / thai. devrel engineer, builder, supporter of founders.",
+        alt: NAME,
       },
     ],
     locale: "en_US",
@@ -81,11 +80,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: NAME,
-    description: TAGLINE,
+    description: DESCRIPTION,
     images: [
       {
         url: "/og-image.jpg",
-        alt: "jxhn — john / thai. devrel engineer, builder, supporter of founders.",
+        alt: NAME,
       },
     ],
     creator: "@0xjooohn",
@@ -103,7 +102,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "jxhn",
+    title: NAME,
     statusBarStyle: "black-translucent",
   },
   other: {
@@ -124,19 +123,16 @@ export const viewport: Viewport = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "john thai",
-  alternateName: ["jxhn", "john", "thai", "0xjooohn"],
+  name: NAME,
+  alternateName: ["john", "thai", "0xjooohn"],
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
-  jobTitle: "Senior DevRel Engineer",
+  jobTitle: "Software Engineer (Protocol & FDE)",
   worksFor: {
     "@type": "Organization",
     name: "LayerZero",
     url: "https://layerzero.network",
   },
-  nationality: ["Ukrainian", "Vietnamese"],
-  homeLocation: { "@type": "Country", name: "Canada" },
-  knowsLanguage: ["en", "uk", "vi", "ru"],
   sameAs: [
     "https://x.com/0xjooohn",
     "https://github.com/jooohneth",
