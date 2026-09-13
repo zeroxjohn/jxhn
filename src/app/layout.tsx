@@ -152,11 +152,16 @@ const themeScript = `
   })();
 `;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const AgentationToolbar =
+    process.env.NODE_ENV === "production"
+      ? null
+      : (await import("@/components/agentation-toolbar")).AgentationToolbar;
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
@@ -170,6 +175,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <ThemeProvider>{children}</ThemeProvider>
+        {AgentationToolbar ? <AgentationToolbar /> : null}
       </body>
     </html>
   );
